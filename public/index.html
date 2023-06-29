@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link
+      rel="icon"
+      href="https://uploads.codesandbox.io/uploads/user/01b3ec77-4d23-4d38-91b7-6c85d9c440f8/sk2a-DBSUClogo.jpg"
+    />
+
+    <title>Nova-UnicefVirtualArtGalley</title>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">In Maintenance</div>
+    <dialog id="dialog"> </dialog>
+
+    <div id="mobileInterface" class="noSelect" style="z-index: 99999999;">
+      <div id="joystickWrapper1"></div>
+    </div>
+    <div id="logger"></div>
+  </body>
+  <script>
+    const removeWatermark = () => {
+      const ids = [];
+      const iframes = document.body.querySelectorAll("iframe");
+      for (const iframe of iframes) {
+        if (iframe.id.startsWith("sb__open-sandbox")) ids.push(iframe.id);
+      }
+      for (const id of ids) {
+        const node = document.createElement("div");
+        node.style.setProperty("display", "none", "important");
+        node.id = id;
+        document.getElementById(id).remove();
+        document.body.appendChild(node);
+      }
+    };
+    setTimeout(removeWatermark, 1000);
+    setTimeout(removeWatermark, 1500);
+    //setTimeout(removeWatermark, 800);
+    /*@codesandbox devs, sorry for removing your anti-phising watermark. Yet the "Open Sandbox" button floats right ontop of my UI, I have no other choice. Sorry UwU*/
+  </script>
+</html>
